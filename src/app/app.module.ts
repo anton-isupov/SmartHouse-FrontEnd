@@ -6,9 +6,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginPageComponent} from './pages/login.page/login.page.component';
 import {PageNotFoundComponent} from './pages/pagenotfound/pagenotfound.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import {BreadcrumbModule, ContextMenuModule, MenubarModule} from 'primeng';
+import {BreadcrumbModule, ContextMenuModule, InputTextModule, MenubarModule, PasswordModule} from 'primeng';
+import { MainComponent } from './pages/main/main.component';
 
 const appRoutes: Routes = [
+  { path: '',      component:  MainComponent},
   { path: 'login',      component:  LoginPageComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -18,7 +20,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginPageComponent,
     PageNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    MainComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -27,7 +30,9 @@ const appRoutes: Routes = [
     BrowserModule,
     BreadcrumbModule,
     ContextMenuModule,
-    MenubarModule
+    MenubarModule,
+    InputTextModule,
+    PasswordModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MenuItem} from 'primeng';
 
 @Component({
@@ -8,26 +8,10 @@ import {MenuItem} from 'primeng';
 })
 export class NavbarComponent implements OnInit {
 
-  items: MenuItem[];
+  @Input() items: MenuItem[];
 
   constructor() { }
 
   ngOnInit() {
-    this.items = [
-      {
-        label: 'Dashboard',
-        items: [{
-          label: 'New',
-          icon: 'pi pi-fw pi-plus',
-          items: [
-            {label: 'Dashboard'},
-            {label: 'Other'},
-          ]
-        },
-          {label: 'Open'},
-          {label: 'Quit'}
-        ]
-      },
-    ];
   }
 }
